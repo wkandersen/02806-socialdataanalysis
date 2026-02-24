@@ -1,0 +1,36 @@
+name: Clear Notebook Outputs
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  clear-output:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Important: Allows the action to push changes back
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }} # Ensures we are on the PR branch
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install nbstripout
+        run: pip install nbstripout
+
+      - name: Clear Outputs
+        run: nbstripout **/*.ipynb
+
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: clear notebook outputs [skip ci]"
+          file_pattern: '**/*.ipynb'
