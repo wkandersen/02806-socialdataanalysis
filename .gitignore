@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+
+project1/merged_sfpd.csv
+
 # C extensions
 *.so
 
