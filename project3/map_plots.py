@@ -1,5 +1,6 @@
 import requests
 import plotly.express as px
+import plotly.graph_objects as go
 import pandas as pd
 
 shapefile = requests.get(
@@ -31,17 +32,19 @@ df.head()
 
 plot_data = df.copy()
 
-fig = px.choropleth_map(
-    plot_data,
-    geojson=geojson,
-    locations="COMMUNITY AREA NAME",
-    color="PER CAPITA INCOME ",
-    featureidkey="properties.community",
-    color_continuous_scale="Magma",
-    map_style="carto-positron",
-    zoom=9,
-    center={"lat": 41.8781, "lon": -87.6298},
-    opacity=0.6,
+fig = go.Figure(
+    data=px.choropleth_map(
+        plot_data,
+        geojson=geojson,
+        locations="COMMUNITY AREA NAME",
+        color="HARDSHIP INDEX",
+        featureidkey="properties.community",
+        color_continuous_scale="Magma",
+        map_style="carto-positron",
+        zoom=9,
+        center={"lat": 41.8781, "lon": -87.6298},
+        opacity=0.6,
+    )
 )
 fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
-fig.show()
+fig.write_html("figures/hardship_choropleth.html", include_plotlyjs="cdn")
