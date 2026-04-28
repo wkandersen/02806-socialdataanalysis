@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SDAV2026 — San Francisco Crime Explorer</title>
+        <title>SDAV2026 — Crime and Socioeconomic Indicators in Chicago</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="funcs.js" defer></script>
     </head>
     <body>
         <header>
@@ -21,12 +22,27 @@
             </div>
         </header>
 
-        <section id="references">
-            <h2 class="section-title">References</h2>
-            <ul class="ref-list">
-                <li>Richard P. Nathan, Charles Adams; <em>Understanding Central City Hardship</em>; <a href="https://www.jstor.org/stable/2149158?seq=1" target="_blank" class="inline-link">JSTOR</a>.</li>
-            </ul>
-        </section>
-        <script src="funcs.js" defer></script>
+        <main class="container">
+
+            <section id="references">
+                <h2 class="section-title">References</h2>
+                <ul class="ref-list">
+                    <li>Richard P. Nathan, Charles Adams; <em>Understanding Central City Hardship</em>; <a href="https://www.jstor.org/stable/2149158?seq=1" target="_blank" class="inline-link">JSTOR</a>.</li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="container">
+                Built for Social Data Analysis & Visualization · 2026 · Final Exam Project.
+            </div>
+        </footer>
+
+        <div class="fullscreen-overlay" id="fullscreenOverlay" aria-hidden="true">
+            <button class="fullscreen-close" id="fullscreenClose" type="button" aria-label="Close fullscreen view">Close</button>
+            <div class="fullscreen-frame" id="fullscreenFrame"></div>
+        </div>
+
     </body>
 </html>
