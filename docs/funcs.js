@@ -101,4 +101,19 @@
             closeFullscreen();
         }
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.querySelector(".viz-grid");
+    if (!grid) return;
+
+    grid.querySelectorAll(".card").forEach((card) => {
+        card.addEventListener("click", () => {
+        card.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center",
+        });
+        });
+    });
+    });
 })();

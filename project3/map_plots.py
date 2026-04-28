@@ -37,7 +37,7 @@ fig = go.Figure(
         plot_data,
         geojson=geojson,
         locations="COMMUNITY AREA NAME",
-        color="HARDSHIP INDEX",
+        color="PER CAPITA INCOME ",
         featureidkey="properties.community",
         color_continuous_scale="Magma",
         map_style="carto-positron",
@@ -47,4 +47,4 @@ fig = go.Figure(
     )
 )
 fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
-fig.write_html("figures/hardship_choropleth.html", include_plotlyjs="cdn")
+fig.write_html("figures/income_choropleth.html", include_plotlyjs="cdn")
