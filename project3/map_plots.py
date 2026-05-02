@@ -47,4 +47,4 @@ fig = go.Figure(
     )
 )
 fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
-fig.write_html("figures/income_choropleth.html", include_plotlyjs="cdn")
+fig.write_html("../docs/figures/income_choropleth.html", include_plotlyjs="cdn")
