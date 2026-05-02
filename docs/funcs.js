@@ -5,6 +5,7 @@
     const overlay = document.getElementById('fullscreenOverlay');
     const frame = document.getElementById('fullscreenFrame');
     const closeBtn = document.getElementById('fullscreenClose');
+    const skylineBanner = document.querySelector('.skyline-banner');
 
     function applyTheme(theme) {
         root.setAttribute('data-theme', theme);
@@ -35,6 +36,37 @@
             // Ignore storage failures and keep the in-memory preference.
         }
     });
+
+    let skylineFrame = null;
+
+    function updateSkylineBanner() {
+        if (!skylineBanner) {
+            return;
+        }
+
+        const fadeDistance = Math.max(window.innerHeight * 0.85, 520);
+        const fadeProgress = Math.min(window.scrollY / fadeDistance, 1);
+        const opacity = Math.max(1 - fadeProgress, 0);
+        const shift = Math.min(window.scrollY * 0.08, 48);
+
+        root.style.setProperty('--skyline-opacity', opacity.toFixed(3));
+        root.style.setProperty('--skyline-shift', `${shift.toFixed(1)}px`);
+    }
+
+    function scheduleSkylineUpdate() {
+        if (skylineFrame !== null) {
+            return;
+        }
+
+        skylineFrame = window.requestAnimationFrame(() => {
+            skylineFrame = null;
+            updateSkylineBanner();
+        });
+    }
+
+    updateSkylineBanner();
+    window.addEventListener('scroll', scheduleSkylineUpdate, { passive: true });
+    window.addEventListener('resize', scheduleSkylineUpdate);
 
     function closeFullscreen() {
         frame.innerHTML = '';
