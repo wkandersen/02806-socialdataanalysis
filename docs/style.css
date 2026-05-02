@@ -301,7 +301,7 @@ main section {
 }
 
 .media-last {
-    background: #f0f4fc;
+    background: var(--media-bg);
 }
 
 .media img,
@@ -318,8 +318,10 @@ main section {
 
 .fullscreen-toggle {
     position: absolute;
-    right: 0.75rem;
-    top: 0.75rem;
+    left: 2vh;
+    right: auto;
+    top: 2vh;
+    bottom: auto;
     border: 0;
     background: rgba(22, 32, 51, 0.88);
     color: #fff;
@@ -329,13 +331,6 @@ main section {
     font-weight: 600;
     cursor: pointer;
     transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.media-last .fullscreen-toggle {
-    left: 0.75rem;
-    right: auto;
-    top: 0.75rem;
-    bottom: auto;
 }
 
 .fullscreen-toggle:hover,
@@ -380,10 +375,9 @@ main section {
 }
 
 .fullscreen-close {
-    position: fixed;
-    right: 0.75rem;
-    top: 0.75rem;
-    left: auto;
+    position: absolute;
+    left: 2vh;
+    top: 2vh;
     border: 0;
     border-radius: 999px;
     padding: 0.5rem 0.9rem;
@@ -409,7 +403,7 @@ main section {
 
 .fullscreen-overlay.fullscreen-last .fullscreen-frame,
 .fullscreen-overlay.fullscreen-last .fullscreen-frame iframe {
-    background: #f0f4fc;
+    background: var(--media-bg);
 }
 
 body.fullscreen-open {

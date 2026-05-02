@@ -75,10 +75,6 @@
             return;
         }
 
-        if (index === mediaBlocks.length - 1) {
-            block.classList.add('media-last');
-        }
-
         const trigger = document.createElement('button');
         trigger.type = 'button';
         trigger.className = 'fullscreen-toggle';
