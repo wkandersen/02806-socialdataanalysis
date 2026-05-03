@@ -189,6 +189,7 @@ nav a:hover {
     border-radius: 999px;
     padding: 0.25rem 0.65rem;
     margin-bottom: 1rem;
+    max-width: max-content;
 }
 
 h1 {
@@ -499,6 +500,52 @@ a.inline-link:hover {
     text-decoration: underline;
 }
 
+.about-layout {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.about-intro {
+    color: var(--muted);
+    max-width: 75ch;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.contribution-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 540px;
+}
+
+.contribution-table th,
+.contribution-table td {
+    padding: 0.9rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+
+.contribution-table thead th {
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--panel-soft);
+}
+
+.contribution-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.contribution-table td:first-child {
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+}
+
 
 /* Figure and Caption Styling */
 figure {
@@ -574,3 +621,7 @@ figcaption strong {
     font-style: italic;
 }
 
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
