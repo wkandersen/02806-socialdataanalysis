@@ -14,9 +14,10 @@
                 <div class="brand">Social Data Analysis and Visualization · Spring 2026</div>
                 <div class="header-actions">
                     <nav>
-                        <a href="#overview">Overview</a>
-                        <a href="#hardship">Hardship</a>
-                        <a href="#Interpretation">Interpretation</a>
+                        <a href="index.html">Overview</a>
+                        <a href="hardship.html">Hardship</a>
+                        <a href="crime.html">Crime</a>
+                        <a href="interpretation.html">Interpretation</a>
                         <a href="https://nbviewer.org/github/wkandersen/02806-socialdataanalysis/blob/main/project3/explainer_notebook.ipynb">Explainer Notebook</a>
                         <a href="about.html">Contributions</a>
                     </nav>
@@ -27,7 +28,7 @@
 
         <main class="container">
 
-            <section id="overview" class="hero">
+<section id="overview" class="hero">
                 <div class="hero-card">
                     <span class="eyebrow">Chicago Crime Scape</span>
                     <h1>Investigating crime and socioeconomic indicators in Chicago</h1>
@@ -58,222 +59,38 @@
                 </div>
             </section>
 
-            <section id="hardship">
-                <h2 class="section-title">Socioeconomic Indicators</h2>
-                <p class="section-subtitle">
-                    Lets take a moment to look at the socioeconomic state of Chicago. 
-                    To measure this, we will look at the Census Data (<a href="https://data.cityofchicago.org/Health-Human-Services/Census-Data-Selected-socioeconomic-indicators-in-C/kn9c-c2s2/about_data" target="_blank" class="inline-link">CityOfChicago.org</a>) collected by the city of Chicago.
-                    This dataset contains a variety of socioeconomic indicators for each of the 77 community areas in Chicago, including the Hardship Index, which is a composite measure of socioeconomic hardship based on factors such as unemployment, poverty, and education levels. 
-                    The socioeconomic data provides a better understanding of how life is for the residents of Chicago, and how it may relate to crime patterns in the city.
-
-                    <b>N.B.</b> Click the next card to continue through the data.
-                </p>
-
-                <div class="carousel-container">
-                    <button class="nav-arrow prev-arrow" aria-label="Previous card"></button>
-                    <div class="viz-grid">
-
-                    <article class="card">
+            <section id="navigation-hub">
+                <h2 class="section-title">Explore the Story</h2>
+                <div class="nav-cards">
+                    <a href="hardship.html" class="nav-hub-card">
                         <div class="card-content">
-                            <h3>Hardship across Chicago</h3>
-                            <p>
-                                This visualization shows the distribution of the Hardship Index across different community areas in Chicago.
-                            </p>
+                            <h3>1. Hardship Indicators</h3>
+                            <p>Explore the socioeconomic state of Chicago, measuring poverty, income, and unemployment across community areas.</p>
                         </div>
-                        <div class="media">
-                            <iframe src="./figures/hardship_choropleth.html" title="Choropleth Map of Hardship Index in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
-
-                    <article class="card">
+                    </a>
+                    <a href="crime.html" class="nav-hub-card">
                         <div class="card-content">
-                            <h3>Per Capita Income across Chicago</h3>
-                            <p>
-                                Here the distribution of per capita income across different community areas in Chicago is shown.
-                            </p>
+                            <h3>2. Criminal Landscape</h3>
+                            <p>Discover the geographic distribution of different types of crime, such as assault, theft, and narcotics.</p>
                         </div>
-                        <div class="media">
-                            <iframe src="./figures/income_choropleth.html" title="Choropleth Map of Per Capita Income in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
-
-                    <article class="card">
+                    </a>
+                    <a href="interpretation.html" class="nav-hub-card">
                         <div class="card-content">
-                            <h3>Poverty across Chicago</h3>
-                            <p>
-                                See the difference in poverty rates across different community areas in Chicago.
-                            </p>
+                            <h3>3. Interpretation</h3>
+                            <p>Analyze the correlation between Chicago's socioeconomic hardship maps and its spatial crime patterns.</p>
                         </div>
-                        <div class="media">
-                            <iframe src="./figures/poverty_choropleth.html" title="Choropleth Map of Percent Households Below Poverty in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Unemployment across Chicago</h3>
-                            <p>
-                                Now look at the distribution of unemployment rates across different community areas in Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/unemployment_choropleth.html" title="Choropleth Map of Percent Age 16+ Unemployed in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
-
-                    </div>
-                    <button class="nav-arrow next-arrow" aria-label="Next card"></button>
+                    </a>
                 </div>
-
-                <p class="section-subtitle">
-                    Looking at the visualizations above, we can see how the various socioeconomic indicators are correlated to the hardship index. It is clear that a high unemployment rate, a high poverty rate, and a low per capita income are all associated with a high hardship index.
-                    Geographically, we can see that the areas with the highest hardship index are located in the south and west sides of Chicago, while the areas with the lowest hardship index are located in the north side, near the coast, of Chicago.
-                </p>
-
             </section>
 
-            <section id="Interpretation">
-                <h2 class="section-title">Interpreting the Crime Landscape</h2>
-                <p class="section-subtitle">
-                    Now that we have an understanding of the socioeconomic landscape of Chicago, we can start to look at how crime patterns are distributed across the city, and how they may relate to the socioeconomic indicators we just explored.
-                    The following visualizations show the distribution of different types of crime across the community areas in Chicago, as well as how they correlate with the hardship index. We will look at some more crime specific cases related to socioeconomic hardship,
-                    and try to interpret how the crime landscape of Chicago is shaped by the socioeconomic conditions of its residents.
-                </p>
-
-                <div class="carousel-container">
-                    <button class="nav-arrow prev-arrow" aria-label="Previous card"></button>
-                    <div class="viz-grid">
-
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Hardship Index vs Crime Count</h3>
-                            <p>
-                                This visualization shows the relationship between the hardship index and crime count across different community areas in Chicago.
-                                We can see that the R² between the hardship index and crime count is only 0.138, which indicates a weak correlation between the two variables. 
-                                This suggests that while there may be some relationship between socioeconomic hardship and crime, it is not a strong one, and other factors may be at play in determining crime patterns in Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/crime_vs_hardship.png" title="Scatter Plot of Hardship Index vs Crime Count in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Theft Distribution vs Socioeconomic Indicators</h3>
-                            <p>
-                                This scatter plot shows the relationship between the rate of theft and two socioeconomic indicators, the first being the percentage of the population under 18 or over 64, and the second being the per capita income, across different community areas in Chicago.
-                                The R² between the theft rate and the percentage of the population under 18 or over 64 is 0.327 indicating that the demographic age distrubtion can explain around 32.7% of the variation in theft rates. Looking at the plot, there is a negative correlation between the two variables, which suggests that areas with a higher percentage of the population under 18 or over 64 tend to have a lower rate of theft.
-                                The R² between the theft rate and per capita income is 0.285, indicating that per capita income can explain around 28.5% of the variation in theft rates. The plot shows a positive correlation between the two variables, which suggests that areas with a higher per capita income tend to have a higher rate of theft.
-                                While there are some correlations between the theft rate and the socioeconomic indicators, it is important to note that these relationships are not necessarily causal, and other factors may be at play in determining crime patterns in Chicago, specfically we are unable to determine if people from poorer areas are committing crimes in richer areas, or if the crime is being committed by people from the richer areas.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/theft_vs_socioeconomic.png" title="Scatter Plot of Theft vs Socioeconomic Indicators in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
-                    </div>
-                    <button class="nav-arrow next-arrow" aria-label="Next card"></button>
-                </div>  
-            </section>
-
-            <section id="crime">
-                <h2 class="section-title">Criminal Landscape</h2>
-                <p class="section-subtitle">
-                    This section will give you an overview of what types of crimes happen where in Chicago. 
-                    The crime data is collected from the Chicago Data Portal (<a href="https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2" target="_blank" class="inline-link">CityOfChicago.org</a>).
-                    In this data you will see a collection of all recorded crimes in the city of Chicago. As you can see in the visualizations below, the data comes with distinctions in both the category of crime and the precise geolocation.
-                    We will use this data to grant a better understanding of where crime happens and draw possible parallels to the socioeconomic indicators we have seen in the previous section.
-
-                    <b>N.B.</b> Click the next card to continue through the data. Zoom in on the maps to see more details.
-                </p>
-                <div class="carousel-container">
-                    <button class="nav-arrow prev-arrow" aria-label="Previous card"></button>
-                <div class="viz-grid">
-
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Collective crime in Chicago</h3>
-                            <p>
-                                Here you see the total distribution of crime across Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/crime_map_all.html" title="Heatmap of total crime in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Assault crimes in Chicago</h3>
-                            <p>
-                                Here you see the distribution of assault crimes across Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/crime_map_assault.html" title="Heatmap of assault crimes in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Gambling crimes in Chicago</h3>
-                            <p>
-                                This is a visualization of gambling crimes across Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/crime_map_gambling.html" title="Heatmap of gambling crimes in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Narcotics crimes in Chicago</h3>
-                            <p>
-                                This is where drug use is typically concentrated in Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/crime_map_narcotics.html" title="Heatmap of narcotics crimes in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Prostitution in Chicago</h3>
-                            <p>
-                                This is a visualization of prostitution crimes across Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/crime_map_prostitution.html" title="Heatmap of prostitution crimes in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Theft in Chicago</h3>
-                            <p>
-                                Where to people steal in Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/crime_map_theft.html" title="Heatmap of theft crimes in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
-                    <button class="nav-arrow next-arrow" aria-label="Next card"></button>
-                </div> 
-            </section>
-
-            <section id="references">
+<section id="references">
                 <h2 class="section-title">References</h2>
                 <ul class="ref-list">
                     <li>Richard P. Nathan, Charles Adams; <em>Understanding Central City Hardship</em>; <a href="https://www.jstor.org/stable/2149158?seq=1" target="_blank" class="inline-link">JSTOR</a>.</li>
                 </ul>
             </section>
 
-        </main>
+</main>
 
         <footer>
             <div class="container">

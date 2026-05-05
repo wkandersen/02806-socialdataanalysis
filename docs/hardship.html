@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SDAV2026</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="funcs.js" defer></script>
+    </head>
+    <body>
+        <div class="skyline-banner" aria-hidden="true"></div>
+        <header>
+            <div class="container header-row">
+                <div class="brand">Social Data Analysis and Visualization · Spring 2026</div>
+                <div class="header-actions">
+                    <nav>
+                        <a href="index.html">Overview</a>
+                        <a href="hardship.html">Hardship</a>
+                        <a href="crime.html">Crime</a>
+                        <a href="interpretation.html">Interpretation</a>
+                        <a href="https://nbviewer.org/github/wkandersen/02806-socialdataanalysis/blob/main/project3/explainer_notebook.ipynb">Explainer Notebook</a>
+                        <a href="about.html">Contributions</a>
+                    </nav>
+                    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark mode</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+
+<section id="hardship">
+                <h2 class="section-title">Socioeconomic Indicators</h2>
+                <p class="section-subtitle">
+                    Lets take a moment to look at the socioeconomic state of Chicago. 
+                    To measure this, we will look at the Census Data (<a href="https://data.cityofchicago.org/Health-Human-Services/Census-Data-Selected-socioeconomic-indicators-in-C/kn9c-c2s2/about_data" target="_blank" class="inline-link">CityOfChicago.org</a>) collected by the city of Chicago.
+                    This dataset contains a variety of socioeconomic indicators for each of the 77 community areas in Chicago, including the Hardship Index, which is a composite measure of socioeconomic hardship based on factors such as unemployment, poverty, and education levels. 
+                    The socioeconomic data provides a better understanding of how life is for the residents of Chicago, and how it may relate to crime patterns in the city.
+
+                    <b>N.B.</b> Click the next card to continue through the data.
+                </p>
+
+                <div class="carousel-container">
+                    <button class="nav-arrow prev-arrow" aria-label="Previous card"></button>
+                    <div class="viz-grid">
+
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Hardship across Chicago</h3>
+                            <p>
+                                This visualization shows the distribution of the Hardship Index across different community areas in Chicago.
+                            </p>
+                        </div>
+                        <div class="media">
+                            <iframe src="./figures/hardship_choropleth.html" title="Choropleth Map of Hardship Index in Chicago" loading="lazy"></iframe>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Per Capita Income across Chicago</h3>
+                            <p>
+                                Here the distribution of per capita income across different community areas in Chicago is shown.
+                            </p>
+                        </div>
+                        <div class="media">
+                            <iframe src="./figures/income_choropleth.html" title="Choropleth Map of Per Capita Income in Chicago" loading="lazy"></iframe>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Poverty across Chicago</h3>
+                            <p>
+                                See the difference in poverty rates across different community areas in Chicago.
+                            </p>
+                        </div>
+                        <div class="media">
+                            <iframe src="./figures/poverty_choropleth.html" title="Choropleth Map of Percent Households Below Poverty in Chicago" loading="lazy"></iframe>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Unemployment across Chicago</h3>
+                            <p>
+                                Now look at the distribution of unemployment rates across different community areas in Chicago.
+                            </p>
+                        </div>
+                        <div class="media">
+                            <iframe src="./figures/unemployment_choropleth.html" title="Choropleth Map of Percent Age 16+ Unemployed in Chicago" loading="lazy"></iframe>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Correlation between Hardship and other indicators</h3>
+                            <p>
+                                Finally, we can look at the correlation between the Hardship Index and the other socioeconomic indicators across the community areas in Chicago.
+                            </p>
+                        </div>
+                        <div class="media">
+                            <iframe src="./figures/crime_hardship_correlation.html" title="Scatter Plots of Hardship Index vs. Other Socioeconomic Indicators in Chicago" loading="lazy"></iframe>
+                        </div>
+                    </article>
+
+                    </div>
+                    <button class="nav-arrow next-arrow" aria-label="Next card"></button>
+                </div>
+
+                <p class="section-subtitle">
+                    Looking at the visualizations above, we can see how the various socioeconomic indicators are correlated to the hardship index. It is clear that a high unemployment rate, a high poverty rate, and a low per capita income are all associated with a high hardship index.
+                    Geographically, we can see that the areas with the highest hardship index are located in the south and west sides of Chicago, while the areas with the lowest hardship index are located in the north side, near the coast, of Chicago.
+                </p>
+
+            </section>
+
+</main>
+
+        <footer>
+            <div class="container">
+                Built for Social Data Analysis & Visualization · 2026 · Final Exam Project.
+            </div>
+        </footer>
+
+        <div class="fullscreen-overlay" id="fullscreenOverlay" aria-hidden="true">
+            <button class="fullscreen-close" id="fullscreenClose" type="button" aria-label="Close fullscreen view">Close</button>
+            <div class="fullscreen-frame" id="fullscreenFrame"></div>
+        </div>
+
+    </body>
+</html>
