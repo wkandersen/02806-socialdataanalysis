@@ -155,6 +155,28 @@
                         </div>
                         <div class="media">
                             <iframe src="./figures/crime_vs_hardship.png" title="Scatter Plot of Hardship Index vs Crime Count in Chicago" loading="lazy"></iframe>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Theft Distribution vs Socioeconomic Indicators</h3>
+                            <p>
+                                This scatter plot shows the relationship between the rate of theft and two socioeconomic indicators, the first being the percentage of the population under 18 or over 64, and the second being the per capita income, across different community areas in Chicago.
+                                The R² between the theft rate and the percentage of the population under 18 or over 64 is 0.327 indicating that the demographic age distrubtion can explain around 32.7% of the variation in theft rates. Looking at the plot, there is a negative correlation between the two variables, which suggests that areas with a higher percentage of the population under 18 or over 64 tend to have a lower rate of theft.
+                                The R² between the theft rate and per capita income is 0.285, indicating that per capita income can explain around 28.5% of the variation in theft rates. The plot shows a positive correlation between the two variables, which suggests that areas with a higher per capita income tend to have a higher rate of theft.
+                                While there are some correlations between the theft rate and the socioeconomic indicators, it is important to note that these relationships are not necessarily causal, and other factors may be at play in determining crime patterns in Chicago, specfically we are unable to determine if people from poorer areas are committing crimes in richer areas, or if the crime is being committed by people from the richer areas.
+                            </p>
+                        </div>
+                        <div class="media">
+                            <iframe src="./figures/theft_vs_socioeconomic.png" title="Scatter Plot of Theft vs Socioeconomic Indicators in Chicago" loading="lazy"></iframe>
+                        </div>
+                    </article>
+                    </div>
+                    <button class="nav-arrow next-arrow" aria-label="Next card"></button>
+                </div>  
+            </section>
+
             <section id="crime">
                 <h2 class="section-title">Criminal Landscape</h2>
                 <p class="section-subtitle">
@@ -165,7 +187,8 @@
 
                     <b>N.B.</b> Click the next card to continue through the data. Zoom in on the maps to see more details.
                 </p>
-
+                <div class="carousel-container">
+                    <button class="nav-arrow prev-arrow" aria-label="Previous card"></button>
                 <div class="viz-grid">
 
                     <article class="card">
@@ -182,16 +205,6 @@
 
                     <article class="card">
                         <div class="card-content">
-                            <h3>Theft Distribution vs Socioeconomic Indicators</h3>
-                            <p>
-                                This scatter plot shows the relationship between the rate of theft and two socioeconomic indicators, the first being the percentage of the population under 18 or over 64, and the second being the per capita income, across different community areas in Chicago.
-                                The R² between the theft rate and the percentage of the population under 18 or over 64 is 0.327 indicating that the demographic age distrubtion can explain around 32.7% of the variation in theft rates. Looking at the plot, there is a negative correlation between the two variables, which suggests that areas with a higher percentage of the population under 18 or over 64 tend to have a lower rate of theft.
-                                The R² between the theft rate and per capita income is 0.285, indicating that per capita income can explain around 28.5% of the variation in theft rates. The plot shows a positive correlation between the two variables, which suggests that areas with a higher per capita income tend to have a higher rate of theft.
-                                While there are some correlations between the theft rate and the socioeconomic indicators, it is important to note that these relationships are not necessarily causal, and other factors may be at play in determining crime patterns in Chicago, specfically we are unable to determine if people from poorer areas are committing crimes in richer areas, or if the crime is being committed by people from the richer areas.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/theft_vs_socioeconomic.png" title="Scatter Plot of Theft vs Socioeconomic Indicators in Chicago" loading="lazy"></iframe>
                             <h3>Assault crimes in Chicago</h3>
                             <p>
                                 Here you see the distribution of assault crimes across Chicago.
@@ -204,13 +217,6 @@
 
                     <article class="card">
                         <div class="card-content">
-                            <h3>Correlation between Hardship and Violent Crime</h3>
-                            <p>
-                                This scatter plot shows the correlation between the hardship index and the rate of violent crime across different community areas in Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/hardship_violent_crime_scatter.html" title="Scatter Plot of Hardship Index vs Violent Crime Rate in Chicago" loading="lazy"></iframe>
                             <h3>Gambling crimes in Chicago</h3>
                             <p>
                                 This is a visualization of gambling crimes across Chicago.
@@ -223,16 +229,6 @@
 
                     <article class="card">
                         <div class="card-content">
-                            <h3>Correlation between Hardship and Property Crime</h3>
-                            <p>
-                                This scatter plot shows the correlation between the hardship
-                            </p>
-                        </div>
-                    </article>
-                    </div>
-                    <button class="nav-arrow next-arrow" aria-label="Next card"></button>
-                </div>
-
                             <h3>Narcotics crimes in Chicago</h3>
                             <p>
                                 This is where drug use is typically concentrated in Chicago.
@@ -266,9 +262,8 @@
                             <iframe src="./figures/crime_map_theft.html" title="Heatmap of theft crimes in Chicago" loading="lazy"></iframe>
                         </div>
                     </article>
-
-                </div>
-
+                    <button class="nav-arrow next-arrow" aria-label="Next card"></button>
+                </div> 
             </section>
 
             <section id="references">
