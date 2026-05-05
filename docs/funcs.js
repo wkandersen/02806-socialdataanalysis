@@ -131,16 +131,27 @@
     });
 
     document.addEventListener("DOMContentLoaded", () => {
-    const grid = document.querySelector(".viz-grid");
-    if (!grid) return;
+    const containers = document.querySelectorAll(".carousel-container");
+    if (!containers.length) return;
 
-    grid.querySelectorAll(".card").forEach((card) => {
-        card.addEventListener("click", () => {
-        card.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "center",
+    containers.forEach(container => {
+        const grid = container.querySelector(".viz-grid");
+        const prevBtn = container.querySelector(".prev-arrow");
+        const nextBtn = container.querySelector(".next-arrow");
+        
+        if (!grid || !prevBtn || !nextBtn) return;
+
+        const getScrollAmount = () => {
+            const card = grid.querySelector('.card');
+            return card ? (card.offsetWidth + parseInt(window.getComputedStyle(grid).gap || 0)) : 0;
+        };
+
+        nextBtn.addEventListener("click", () => {
+            grid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
         });
+
+        prevBtn.addEventListener("click", () => {
+            grid.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
         });
     });
     });

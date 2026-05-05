@@ -278,13 +278,75 @@ main section {
     margin-bottom: 1rem;
 }
 
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-arrow {
+    appearance: none;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    backdrop-filter: blur(8px);
+}
+
+.nav-arrow::after {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-top: 3px solid currentColor;
+    border-right: 3px solid currentColor;
+    border-radius: 2px;
+}
+
+.prev-arrow::after {
+    transform: translateX(3px) rotate(-135deg);
+}
+
+.next-arrow::after {
+    transform: translateX(-3px) rotate(45deg);
+}
+
+.nav-arrow:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 12px 30px rgba(199, 29, 214, 0.3);
+}
+
+.prev-arrow {
+    left: -30px;
+}
+
+.next-arrow {
+    right: -30px;
+}
+
 .viz-grid {
     display: flex;
     gap: 1.5rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-padding: 1rem;
-    padding: 0.5rem 0 1rem;
+    padding: 1rem 0; /* Make symmetrical so absolute top 50% centers precisely */
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
 }

@@ -3,7 +3,7 @@ __pycache__/
 *.py[codz]
 *$py.class
 
-
+project3/williamnotebook.ipynb
 project1/merged_sfpd.csv
 
 # C extensions
