@@ -64,6 +64,8 @@
                     To measure this, we will look at the Census Data (<a href="https://data.cityofchicago.org/Health-Human-Services/Census-Data-Selected-socioeconomic-indicators-in-C/kn9c-c2s2/about_data" target="_blank" class="inline-link">CityOfChicago.org</a>) collected by the city of Chicago.
                     This dataset contains a variety of socioeconomic indicators for each of the 77 community areas in Chicago, including the Hardship Index, which is a composite measure of socioeconomic hardship based on factors such as unemployment, poverty, and education levels. 
                     The socioeconomic data provides a better understanding of how life is for the residents of Chicago, and how it may relate to crime patterns in the city.
+
+                    <b>N.B.</b> Click the next card to continue through the data.
                 </p>
 
                 <div class="viz-grid">
@@ -122,6 +124,95 @@
                     Looking at the visualizations above, we can see how the various socioeconomic indicators are correlated to the hardship index. It is clear that a high unemployment rate, a high poverty rate, and a low per capita income are all associated with a high hardship index.
                     Geographically, we can see that the areas with the highest hardship index are located in the south and west sides of Chicago, while the areas with the lowest hardship index are located in the north side, near the coast, of Chicago.
                 </p>
+
+            </section>
+
+            <section id="crime">
+                <h2 class="section-title">Criminal Landscape</h2>
+                <p class="section-subtitle">
+                    This section will give you an overview of what types of crimes happen where in Chicago. 
+                    The crime data is collected from the Chicago Data Portal (<a href="https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2" target="_blank" class="inline-link">CityOfChicago.org</a>).
+                    In this data you will see a collection of all recorded crimes in the city of Chicago. As you can see in the visualizations below, the data comes with distinctions in both the category of crime and the precise geolocation.
+                    We will use this data to grant a better understanding of where crime happens and draw possible parallels to the socioeconomic indicators we have seen in the previous section.
+
+                    <b>N.B.</b> Click the next card to continue through the data. Zoom in on the maps to see more details.
+                </p>
+
+                <div class="viz-grid">
+
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Collective crime in Chicago</h3>
+                            <p>
+                                Here you see the total distribution of crime across Chicago.
+                            </p>
+                        </div>
+                        <div class="media">
+                            <iframe src="./figures/crime_map_all.html" title="Heatmap of total crime in Chicago" loading="lazy"></iframe>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Assault crimes in Chicago</h3>
+                            <p>
+                                Here you see the distribution of assault crimes across Chicago.
+                            </p>
+                        </div>
+                        <div class="media">
+                            <iframe src="./figures/crime_map_assault.html" title="Heatmap of assault crimes in Chicago" loading="lazy"></iframe>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Gambling crimes in Chicago</h3>
+                            <p>
+                                This is a visualization of gambling crimes across Chicago.
+                            </p>
+                        </div>
+                        <div class="media">
+                            <iframe src="./figures/crime_map_gambling.html" title="Heatmap of gambling crimes in Chicago" loading="lazy"></iframe>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Narcotics crimes in Chicago</h3>
+                            <p>
+                                This is where drug use is typically concentrated in Chicago.
+                            </p>
+                        </div>
+                        <div class="media">
+                            <iframe src="./figures/crime_map_narcotics.html" title="Heatmap of narcotics crimes in Chicago" loading="lazy"></iframe>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Prostitution in Chicago</h3>
+                            <p>
+                                This is a visualization of prostitution crimes across Chicago.
+                            </p>
+                        </div>
+                        <div class="media">
+                            <iframe src="./figures/crime_map_prostitution.html" title="Heatmap of prostitution crimes in Chicago" loading="lazy"></iframe>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Theft in Chicago</h3>
+                            <p>
+                                Where to people steal in Chicago.
+                            </p>
+                        </div>
+                        <div class="media">
+                            <iframe src="./figures/crime_map_theft.html" title="Heatmap of theft crimes in Chicago" loading="lazy"></iframe>
+                        </div>
+                    </article>
+
+                </div>
 
             </section>
 
