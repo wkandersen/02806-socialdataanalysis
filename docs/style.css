@@ -6,7 +6,7 @@
     --primary: #c71dd6;
     --primary-soft: #fadbfe;
     --border: #dbe2ef;
-    --shadow: 0 10px 30px rgba(22, 32, 51, 0.08);
+    --shadow: 0 10px 30px rgba(22, 32, 51, 0.205);
     --radius: 14px;
     --page-top-glow: #eef4ff;
     --page-bottom-glow: #f9fbff;
@@ -23,6 +23,9 @@
     --caveat-border: #fab005;
     --caveat-text: #865e00;
     --caveat-strong: #664800;
+    --section-panel-bg: rgba(255, 255, 255, 0.72);
+    --section-panel-border: rgba(219, 226, 239, 0.92);
+    --section-panel-glow: rgba(199, 29, 214, 0.08);
 }
 
 [data-theme="dark"] {
@@ -33,7 +36,7 @@
     --primary: #e783f2;
     --primary-soft: #472752;
     --border: #2a3552;
-    --shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+    --shadow: 0 14px 36px rgba(0, 0, 0, 0.699);
     --page-top-glow: #141c30;
     --page-bottom-glow: #0b111c;
     --header-bg: rgba(12, 18, 31, 0.85);
@@ -49,6 +52,9 @@
     --caveat-border: #d9a31c;
     --caveat-text: #f5d889;
     --caveat-strong: #ffe7b3;
+    --section-panel-bg: rgba(21, 29, 49, 0.82);
+    --section-panel-border: rgba(42, 53, 82, 0.95);
+    --section-panel-glow: rgba(231, 131, 242, 0.1);
 }
 
 * {
@@ -333,6 +339,15 @@ h1 {
 
 main section {
     margin: 2rem 0;
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+    background:
+        linear-gradient(135deg, var(--section-panel-glow), transparent 60%),
+        var(--section-panel-bg);
+    border: 1px solid var(--section-panel-border);
+    border-radius: calc(var(--radius) + 2px);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .section-title {
