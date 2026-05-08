@@ -20,87 +20,125 @@
                     The crime data is collected from the Chicago Data Portal (<a href="https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2" target="_blank" class="inline-link">CityOfChicago.org</a>).
                     In this data you will see a collection of all recorded crimes in the city of Chicago. As you can see in the visualizations below, the data comes with distinctions in both the category of crime and the precise geolocation.
                     We will use this data to grant a better understanding of where crime happens and draw possible parallels to the socioeconomic indicators we have seen in the previous section.
-
-                    <b>N.B.</b> Click the next card to continue through the data. Zoom in on the maps to see more details.
+                </p>
+                <p class="section-subtitle">
+                    <b>N.B.</b> Zoom in on the maps to see more detail.
                 </p>
                 <div class="carousel-container">
                     <button class="nav-arrow prev-arrow" aria-label="Previous card"></button>
-                <div class="viz-grid">
+                    <div class="viz-grid">
 
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Collective crime in Chicago</h3>
-                            <p>
-                                Here you see the total distribution of crime across Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/crime_map_all.html" title="Heatmap of total crime in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
+                        <article class="card">
+                            <div class="card-content">
+                                <h3>Collective crime in Chicago</h3>
+                            </div>
+                            <div class="media">
+                                <iframe src="./figures/crime_map_all.html" title="Heatmap of total crime in Chicago" loading="lazy"></iframe>
+                            </div>
+                        </article>
 
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Assault crimes in Chicago</h3>
-                            <p>
-                                Here you see the distribution of assault crimes across Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/crime_map_assault.html" title="Heatmap of assault crimes in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
+                        <article class="card">
+                            <div class="card-content">
+                                <h3>Assault crimes in Chicago</h3>
+                            </div>
+                            <div class="media">
+                                <iframe src="./figures/crime_map_assault.html" title="Heatmap of assault crimes in Chicago" loading="lazy"></iframe>
+                            </div>
+                        </article>
 
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Gambling crimes in Chicago</h3>
-                            <p>
-                                This is a visualization of gambling crimes across Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/crime_map_gambling.html" title="Heatmap of gambling crimes in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
+                        <article class="card">
+                            <div class="card-content">
+                                <h3>Gambling crimes in Chicago</h3>
+                            </div>
+                            <div class="media">
+                                <iframe src="./figures/crime_map_gambling.html" title="Heatmap of gambling crimes in Chicago" loading="lazy"></iframe>
+                            </div>
+                        </article>
 
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Narcotics crimes in Chicago</h3>
-                            <p>
-                                This is where drug use is typically concentrated in Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/crime_map_narcotics.html" title="Heatmap of narcotics crimes in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
+                        <article class="card">
+                            <div class="card-content">
+                                <h3>Narcotics crimes in Chicago</h3>
+                            </div>
+                            <div class="media">
+                                <iframe src="./figures/crime_map_narcotics.html" title="Heatmap of narcotics crimes in Chicago" loading="lazy"></iframe>
+                            </div>
+                        </article>
 
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Prostitution in Chicago</h3>
-                            <p>
-                                This is a visualization of prostitution crimes across Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/crime_map_prostitution.html" title="Heatmap of prostitution crimes in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
+                        <article class="card">
+                            <div class="card-content">
+                                <h3>Prostitution in Chicago</h3>
+                            </div>
+                            <div class="media">
+                                <iframe src="./figures/crime_map_prostitution.html" title="Heatmap of prostitution crimes in Chicago" loading="lazy"></iframe>
+                            </div>
+                        </article>
 
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Theft in Chicago</h3>
-                            <p>
-                                Where to people steal in Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/crime_map_theft.html" title="Heatmap of theft crimes in Chicago" loading="lazy"></iframe>
-                        </div>
-                    </article>
-                    <button class="nav-arrow next-arrow" aria-label="Next card"></button>
-                </div> 
+                        <article class="card">
+                            <div class="card-content">
+                                <h3>Theft in Chicago</h3>
+                            </div>
+                            <div class="media">
+                                <iframe src="./figures/crime_map_theft.html" title="Heatmap of theft crimes in Chicago" loading="lazy"></iframe>
+                            </div>
+                        </article>
+                        <button class="nav-arrow next-arrow" aria-label="Next card"></button>
+                    </div> 
+                </div>
+
+                <p class="section-subtitle">
+                    The plots above show a geographical difference. Perhaps you need to look a bit closer if you missed it. 
+                    There is a separation in the areas in which the various crimes happen, specifically a split between the south-western (areas with high hardship) areas and the north-eastern (areas with low hardship) areas.
+                    Let's dissect that! Looking at the collective crime, there are some clusters, but nothing specifically springs to mind. However, looking into some of the crimes types a different picture emerges.
+                    Take a look at e.g. the gambling crimes. There are two large clusters, one in the south and one in the west; both areas with high hardship. The narcotics crimes are showing a similar patterns, but here we also see hot-spots around city hubs like important squares and stations. 
+                    Differently, looking at thefts the opposite pattern emerges, where most arrests happen in the areas with lower hardship.
+                    The prostitution crime is also showing a pattern, although it is a slightly different one. Here the crime hot-spots are located on specific streets, showing very distinct either horizontal or vertical lines.
+                </p>
+
+                <p class="section-subtitle">
+                    To support the above conclusions we will have a look at a KMeans cluster analysis of some cherry picked crimes.
+                    The results of said analysis can be found in the figures below, where we have plotted the clusters for gambling and theft crimes. 
+                    Lets first have a look at the gambling crimes.
+                </p>
+
+                <article class="card">
+                    <div class="card-content">
+                        <h3>Gambling in Chicago</h3>
+                    </div>
+                    <div class="media">
+                        <iframe src="./figures/gambling_clusters.html" title="Cluster analysis of gambling crimes in Chicago" loading="lazy" style="background-color: white;"></iframe>
+                    </div>
+                </article>
+                <br>
+
+                <p class="section-subtitle">
+                    The visualization shows a sample of the gambling crime locations colored by a 2-means clustering.
+                    You should use this as a quantification of the qualitative analysis above, suddenly we are not just thinking above how the gambling crimes are centered in the west and south, we see it in color.
+                    Now, what would happen if we added a third cluster to this plot? Would we see a cluster in richer part of town, or rather another partitioning of the high-hardship areas?
+                    No. It is obvious from the plot that the southern part would be split in two as the amount of gambling crimes in the north-eastern parts of town simply aren't high enough.
+                </p>
+
+                <article class="card">
+                    <div class="card-content">
+                        <h3>Theft in Chicago</h3>
+                    </div>
+                    <div class="media">
+                        <iframe src="./figures/theft_clusters.html" title="Cluster analysis of theft crimes in Chicago" loading="lazy" style="background-color: white;"></iframe>
+                    </div>
+                </article>
+                <br>
+                
+                <p class="section-subtitle">
+                    For the theft crimes a different picture emerges. Here we need a few more clusters to capture the picture.
+                    Instead of having two clear areas we now see three weaker cluster and one strong cluster along the coast and downtown areas.
+                    Again this supports the qualitative analysis from the heatmaps. The thefts are concentrated in the areas with lower hardship and higher income.
+                    Coincidentally, this does not support the common narrative that crime is more prevalent in poorer areas, but rather the opposite. 
+                    This is a good example of how data can be used to challenge our assumptions and biases about the world around us. 
+                    In this case the explanation likely is that the thefts are more likely in areas with dense population and more targets. 
+                    Remember that the location is that of the crimes, not the residence of the perpetrators.
+                </p>
+
             </section>
+            
 
         <div class="page-nav">
                 <a href="./hardship.html" class="nav-link prev">← Previous page</a>

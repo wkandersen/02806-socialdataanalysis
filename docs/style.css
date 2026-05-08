@@ -52,9 +52,9 @@
     --caveat-border: #d9a31c;
     --caveat-text: #f5d889;
     --caveat-strong: #ffe7b3;
-    --section-panel-bg: rgba(21, 29, 49, 0.82);
+    --section-panel-bg: rgba(21, 29, 49, 0.9);
     --section-panel-border: rgba(42, 53, 82, 0.95);
-    --section-panel-glow: rgba(231, 131, 242, 0.1);
+    --section-panel-glow: rgba(231, 131, 242, 0.2);
 }
 
 * {
@@ -473,6 +473,10 @@ main section {
 
 .media-last {
     background: var(--media-bg);
+}
+
+.media white-bg {
+    background: #fff;
 }
 
 .media img,
