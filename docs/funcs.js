@@ -1,14 +1,67 @@
 (function () {
     const root = document.documentElement;
-    const themeToggle = document.getElementById('themeToggle');
+    const headerMount = document.querySelector('[data-site-header]');
     const mediaBlocks = document.querySelectorAll('.media');
     const overlay = document.getElementById('fullscreenOverlay');
     const frame = document.getElementById('fullscreenFrame');
     const closeBtn = document.getElementById('fullscreenClose');
     const skylineBanner = document.querySelector('.skyline-banner');
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+    function renderHeader() {
+        if (!headerMount) {
+            return;
+        }
+
+        const navigationItems = [
+            { href: 'index.html', label: 'Overview' },
+            { href: 'hardship.html', label: 'Hardship' },
+            { href: 'crime.html', label: 'Crime' },
+            { href: 'interpretation.html', label: 'Interpretation' },
+            {
+                href: 'https://nbviewer.org/github/wkandersen/02806-socialdataanalysis/blob/main/project3/explainer_notebook.ipynb',
+                label: 'Explainer Notebook',
+                external: true,
+            },
+            { href: 'about.html', label: 'Contributions' },
+        ];
+
+        const navigationMarkup = navigationItems.map((item) => {
+            const isActive = !item.external && item.href === currentPage;
+            const attributes = [
+                `href="${item.href}"`,
+                item.external ? 'target="_blank" rel="noopener noreferrer"' : '',
+                isActive ? 'aria-current="page"' : '',
+            ]
+                .filter(Boolean)
+                .join(' ');
+
+            return `<a ${attributes}>${item.label}</a>`;
+        }).join('');
+
+        headerMount.innerHTML = `
+            <div class="container header-row">
+                <div class="brand">Social Data Analysis and Visualization · Spring 2026</div>
+                <nav>
+                    ${navigationMarkup}
+                </nav>
+                <div class="header-actions">
+                    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark mode</button>
+                </div>
+            </div>
+        `;
+    }
+
+    renderHeader();
+
+    const themeToggle = document.getElementById('themeToggle');
 
     function applyTheme(theme) {
         root.setAttribute('data-theme', theme);
+        if (!themeToggle) {
+            return;
+        }
+
         const isDark = theme === 'dark';
         themeToggle.textContent = isDark ? 'Light mode' : 'Dark mode';
         themeToggle.setAttribute('aria-pressed', String(isDark));
@@ -27,15 +80,17 @@
     }
     applyTheme(initialTheme);
 
-    themeToggle.addEventListener('click', () => {
-        const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        applyTheme(nextTheme);
-        try {
-            localStorage.setItem('theme', nextTheme);
-        } catch (error) {
-            // Ignore storage failures and keep the in-memory preference.
-        }
-    });
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(nextTheme);
+            try {
+                localStorage.setItem('theme', nextTheme);
+            } catch (error) {
+                // Ignore storage failures and keep the in-memory preference.
+            }
+        });
+    }
 
     let skylineFrame = null;
 

@@ -225,6 +225,11 @@ nav a {
     transition: 0.2s ease;
 }
 
+nav a[aria-current="page"] {
+    color: var(--primary);
+    background: var(--primary-soft);
+}
+
 nav a:hover {
     color: var(--primary);
     background: var(--primary-soft);
