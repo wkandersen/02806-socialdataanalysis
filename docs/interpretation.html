@@ -21,41 +21,33 @@
                     and try to interpret how the crime landscape of Chicago is shaped by the socioeconomic conditions of its residents.
                 </p>
 
-                <div class="carousel-container">
-                    <button class="nav-arrow prev-arrow" aria-label="Previous card"></button>
-                    <div class="viz-grid">
-
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Hardship Index vs Crime Count</h3>
-                            <p>
-                                This visualization shows the relationship between the hardship index and crime count across different community areas in Chicago.
-                                We can see that the R² between the hardship index and crime count is only 0.138, which indicates a weak correlation between the two variables. 
-                                This suggests that while there may be some relationship between socioeconomic hardship and crime, it is not a strong one, and other factors may be at play in determining crime patterns in Chicago.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/crime_vs_hardship.png" title="Scatter Plot of Hardship Index vs Crime Count in Chicago" loading="lazy"></iframe>
+                <div class="content-flow">
+                    <article class="flow-section" style="margin-bottom: 4rem;">
+                        <h3>Hardship Index vs Crime Count</h3>
+                        <p>
+                            This visualization shows the relationship between the hardship index and crime count across different community areas in Chicago.
+                            We can see that the R-value between the hardship index and crime count is only 0.138, which indicates a weak correlation between the two variables. 
+                            This suggests that while there may be some relationship between socioeconomic hardship and crime, it is not a strong one, and other factors may be at play in determining crime patterns in Chicago.
+                            The R^2 value of 0.071 also indicates that only about 7.1% of the variation in crime count can be explained by the hardship index, which further supports the idea that there are other factors influencing crime patterns in Chicago beyond just socioeconomic hardship.
+                        </p>
+                        <div class="media" style="margin-top: 1.5rem;">
+                            <iframe src="./figures/crime_vs_hardship.png" title="Scatter Plot of Hardship Index vs Crime Count in Chicago" loading="lazy" style="width: 100%; min-height: 500px; border: none;"></iframe>
                         </div>
                     </article>
 
-                    <article class="card">
-                        <div class="card-content">
-                            <h3>Theft Distribution vs Socioeconomic Indicators</h3>
-                            <p>
-                                This scatter plot shows the relationship between the rate of theft and two socioeconomic indicators, the first being the percentage of the population under 18 or over 64, and the second being the per capita income, across different community areas in Chicago.
-                                The R² between the theft rate and the percentage of the population under 18 or over 64 is 0.327 indicating that the demographic age distrubtion can explain around 32.7% of the variation in theft rates. Looking at the plot, there is a negative correlation between the two variables, which suggests that areas with a higher percentage of the population under 18 or over 64 tend to have a lower rate of theft.
-                                The R² between the theft rate and per capita income is 0.285, indicating that per capita income can explain around 28.5% of the variation in theft rates. The plot shows a positive correlation between the two variables, which suggests that areas with a higher per capita income tend to have a higher rate of theft.
-                                While there are some correlations between the theft rate and the socioeconomic indicators, it is important to note that these relationships are not necessarily causal, and other factors may be at play in determining crime patterns in Chicago, specfically we are unable to determine if people from poorer areas are committing crimes in richer areas, or if the crime is being committed by people from the richer areas.
-                            </p>
-                        </div>
-                        <div class="media">
-                            <iframe src="./figures/theft_vs_socioeconomic.png" title="Scatter Plot of Theft vs Socioeconomic Indicators in Chicago" loading="lazy"></iframe>
+                    <article class="flow-section" style="margin-bottom: 4rem;">
+                        <h3>Theft Distribution vs Socioeconomic Indicators</h3>
+                        <p>
+                            This scatter plot shows the relationship between the volume of theft and two socioeconomic indicators, the first being the percentage of the population under 18 or over 64, and the second being the per capita income, across different community areas in Chicago.
+                            The R² between the theft volume and the percentage of the population under 18 or over 64 is 0.327 indicating that the demographic age distrubtion can explain around 32.7% of the variation in theft volumes. Looking at the plot, there is a negative correlation between the two variables, which suggests that areas with a higher percentage of the population under 18 or over 64 tend to have a lower volume of theft.
+                            The R² between the theft volume and per capita income is 0.285, indicating that per capita income can explain around 28.5% of the variation in theft volumes. The plot shows a positive correlation between the two variables, which suggests that areas with a higher per capita income tend to have a higher volume of theft.
+                            While there are some correlations between the theft volume and the socioeconomic indicators, it is important to note that these relationships are not necessarily causal, and other factors may be at play in determining crime patterns in Chicago, specfically we are unable to determine if people from poorer areas are committing crimes in richer areas, or if the crime is being committed by people from the richer areas.
+                        </p>
+                        <div class="media" style="margin-top: 1.5rem;">
+                            <iframe src="./figures/theft_vs_socioeconomic.png" title="Scatter Plot of Theft vs Socioeconomic Indicators in Chicago" loading="lazy" style="width: 100%; min-height: 500px; border: none;"></iframe>
                         </div>
                     </article>
-                    </div>
-                    <button class="nav-arrow next-arrow" aria-label="Next card"></button>
-                </div>  
+                </div>
             </section>
 
             <div class="page-nav">
