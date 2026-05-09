@@ -23,28 +23,50 @@
 
                 <div class="content-flow">
                     <article class="flow-section" style="margin-bottom: 4rem;">
-                        <h3>Hardship Index vs Crime Count</h3>
+                        <h3>Hardship Index vs Crime Rate per 10k Residents</h3>
                         <p>
-                            This visualization shows the relationship between the hardship index and crime count across different community areas in Chicago.
-                            We can see that the R-value between the hardship index and crime count is only 0.138, which indicates a weak correlation between the two variables. 
-                            This suggests that while there may be some relationship between socioeconomic hardship and crime, it is not a strong one, and other factors may be at play in determining crime patterns in Chicago.
-                            The R^2 value of 0.071 also indicates that only about 7.1% of the variation in crime count can be explained by the hardship index, which further supports the idea that there are other factors influencing crime patterns in Chicago beyond just socioeconomic hardship.
+                        This interactive visualization shows the relationship between the socioeconmic indicators and the crime rate per 10,000 residents across different community areas in Chicago. 
+                        We can see that the R-value between the hardship index and the crime rate is approximately 0.601, which indicates a moderate positive correlation between the two variables. 
+                        This suggests a notable relationship where areas with higher socioeconomic hardship tend to experience higher rates of crime. 
+                        </p>
+                        <p>
+                        The R² value of 0.361 indicates that about 36.1% of the variation in the crime rate can be explained by the hardship index. While socioeconomic hardship is a significant factor, the remaining variance supports the idea that other elements also influence crime patterns in Chicago. The plot is interactive, allowing different socioeconomic indicators to be selected and compared against the crime rate.
                         </p>
                         <div class="media" style="margin-top: 1.5rem;">
-                            <iframe src="./figures/crime_vs_hardship.png" title="Scatter Plot of Hardship Index vs Crime Count in Chicago" loading="lazy" style="width: 100%; min-height: 500px; border: none;"></iframe>
+                            <iframe src="./figures/crime_vs_sociodata_combined.html" title="Scatter Plot of Hardship Index vs Crime Count in Chicago" loading="lazy" style="width: 100%; height: 600px; border: none; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"></iframe>
                         </div>
                     </article>
 
                     <article class="flow-section" style="margin-bottom: 4rem;">
-                        <h3>Theft Distribution vs Socioeconomic Indicators</h3>
+                        <h3>Unemployment vs Poverty</h3>
                         <p>
-                            This scatter plot shows the relationship between the volume of theft and two socioeconomic indicators, the first being the percentage of the population under 18 or over 64, and the second being the per capita income, across different community areas in Chicago.
-                            The R² between the theft volume and the percentage of the population under 18 or over 64 is 0.327 indicating that the demographic age distrubtion can explain around 32.7% of the variation in theft volumes. Looking at the plot, there is a negative correlation between the two variables, which suggests that areas with a higher percentage of the population under 18 or over 64 tend to have a lower volume of theft.
-                            The R² between the theft volume and per capita income is 0.285, indicating that per capita income can explain around 28.5% of the variation in theft volumes. The plot shows a positive correlation between the two variables, which suggests that areas with a higher per capita income tend to have a higher volume of theft.
-                            While there are some correlations between the theft volume and the socioeconomic indicators, it is important to note that these relationships are not necessarily causal, and other factors may be at play in determining crime patterns in Chicago, specfically we are unable to determine if people from poorer areas are committing crimes in richer areas, or if the crime is being committed by people from the richer areas.
+                        Before looking at the relationship between a specific crime type and the socioeconomic indicators, we can first look at the relationship between two of the socioeconomic indicators themselves: the percentage of the population unemployed and the percentage of households below poverty.
                         </p>
-                        <div class="media" style="margin-top: 1.5rem;">
-                            <iframe src="./figures/theft_vs_socioeconomic.png" title="Scatter Plot of Theft vs Socioeconomic Indicators in Chicago" loading="lazy" style="width: 100%; min-height: 500px; border: none;"></iframe>
+                        <p>
+                        The correlation between them has been computed to be 0.800, indicating a strong positive correlation between the two variables. While this strong correlation is expected, as unemployment is a key factor contributing to poverty,
+                        this correlation will be the reason that only one of the two indicators will be used in the subsequent analysis, as they are likely to provide similar insights into the relationship between crime and socioeconomic conditions in Chicago.
+                        </p>
+                        <div class="media" style="margin-top: 1.5rem; text-align: center;">
+                            <img src="./figures/unemployment_vs_poverty.png" alt="Scatter Plot of Unemployment vs Poverty" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        </div>
+                    </article>                   
+
+                    <article class="flow-section" style="margin-bottom: 4rem;">
+                        <h3>Narcotics Distribution vs Socioeconomic Indicators</h3>
+                        <p>
+                        These scatter plots show the relationship between the narcotics crime rate (per 10,000 residents) and two socioeconomic indicators: the percentage of households below poverty, and the percentage of residents aged 16 and older who are unemployed, across different community areas in Chicago.
+                        </p>
+                        <p>
+                        The R² between the narcotics rate and the percentage of households below poverty is 0.541, indicating that the poverty rate can explain around 54.1% of the variation in narcotics rates. Looking at the plot, there is a strong positive correlation (R = 0.736) between the two variables, which suggests that areas with a higher percentage of households below poverty tend to have a higher rate of narcotics-related crimes.
+                        </p>
+                        <p>
+                        The R² between the narcotics rate and the percentage of unemployed residents is 0.484, indicating that unemployment can explain around 48.4% of the variation in narcotics rates. The plot also shows a positive correlation (R = 0.696) between these two variables, suggesting that areas with higher unemployment rates similarly tend to have higher rates of narcotics-related crimes.
+                        </p>
+                        <p>
+                        While there are strong correlations between the narcotics rate and these socioeconomic indicators, it is important to note that these relationships are not necessarily causal, and other factors may be at play in determining crime patterns in Chicago. Specifically, higher recorded narcotics counts in disadvantaged areas could be heavily influenced by systemic factors, such as differences in policing strategies, patrol density, or resource allocation, rather than solely indicating the behavior of the residents themselves.
+                        </p>
+                        <div class="media" style="margin-top: 1.5rem; text-align: center;">
+                            <img src="./figures/narcotics_vs_socioeconomic.png" alt="Scatter Plot of Narcotics vs Socioeconomic Indicators in Chicago" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                         </div>
                     </article>
                 </div>

@@ -151,7 +151,7 @@ main.container {
 }
 
 .container {
-    width: min(1100px, 92vw);
+    width: min(1400px, 92vw);
     margin: 0 auto;
     position: relative;
     z-index: 1;
