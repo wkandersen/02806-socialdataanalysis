@@ -17,7 +17,7 @@
             { href: 'index.html', label: 'Overview' },
             { href: 'hardship.html', label: 'Hardship' },
             { href: 'crime.html', label: 'Crime' },
-            { href: 'interpretation.html', label: 'Interpretation' },
+            { href: 'correlation.html', label: 'Correlation' },
             {
                 href: 'https://nbviewer.org/github/wkandersen/02806-socialdataanalysis/blob/main/project3/explainer_notebook.ipynb',
                 label: 'Explainer Notebook',
