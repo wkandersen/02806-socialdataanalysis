@@ -358,6 +358,11 @@ main section {
     margin-bottom: 1rem;
 }
 
+.section-subtitle b{
+    color: var(--text);
+    font-weight: 600;
+}
+
 .carousel-container {
     position: relative;
     display: flex;

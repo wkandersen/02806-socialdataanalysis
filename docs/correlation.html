@@ -21,64 +21,65 @@
                     This section focuses on the strength and direction of those relationships, rather than a broader interpretation of the crime landscape.
                 </p>
 
-                <div class="content-flow">
-                    <article class="flow-section" style="margin-bottom: 4rem;">
-                        <h3>Hardship Index vs Crime Rate per 10k Residents</h3>
-                        <p>
-                        This interactive visualization shows the relationship between the socioeconmic indicators and the crime rate per 10,000 residents across different community areas in Chicago. 
-                        We can see that the R-value between the hardship index and the crime rate is approximately 0.601, which indicates a moderate positive correlation between the two variables. 
-                        This suggests a notable relationship where areas with higher socioeconomic hardship tend to experience higher rates of crime. 
-                        </p>
-                        <p>
-                        The R² value of 0.361 indicates that about 36.1% of the variation in the crime rate can be explained by the hardship index. While socioeconomic hardship is a significant factor, the remaining variance supports the idea that other elements also influence crime patterns in Chicago. The plot is interactive, allowing different socioeconomic indicators to be selected and compared against the crime rate.
-                        </p>
-                        <div class="media" style="margin-top: 1.5rem;">
-                            <figure>
-                                <iframe src="./figures/crime_vs_sociodata_combined.html" title="Scatter Plot of Hardship Index vs Crime Count in Chicago" loading="lazy" style="width: 100%; height: 600px; border: none; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"></iframe>
-                                <figcaption>Interactive scatter plot showing the relationship between the hardship index and crime rate per 10,000 residents across Chicago's community areas.</figcaption>
-                            </figure>
-                        </div>
-                    </article>
+                <p class="section-subtitle">
+                    <b>Hardship Index vs Crime Rate per 10k Residents</b>
+                    <br>
+                    This interactive visualization shows the relationship between the socioeconomic indicators and the crime rate per 10,000 residents across different community areas in Chicago. 
+                    We can see that the R-value between the hardship index and the crime rate is approximately 0.601, which indicates a moderate positive correlation between the two variables. 
+                    This suggests a notable relationship where areas with higher socioeconomic hardship tend to experience higher rates of crime. 
+                    <br>
+                    The R² value of 0.361 indicates that about 36.1% of the variation in the crime rate can be explained by the hardship index. While socioeconomic hardship is a significant factor, the remaining variance supports the idea that other elements also influence crime patterns in Chicago. The plot is interactive, allowing different socioeconomic indicators to be selected and compared against the crime rate.
+                </p>
+                <article class="card">
+                    <div class="card-content">
+                        <h3>Crime rate correlation analysis</h3>
+                    </div>
+                    <figure class="media">
+                        <iframe src="./figures/crime_vs_sociodata_combined.html" title="Scatter Plot of Hardship Index vs Crime Count in Chicago" loading="lazy"></iframe>
+                        <figcaption>Interactive scatter plot showing the relationship between the hardship index and crime rate per 10,000 residents across Chicago's community areas.</figcaption>
+                    </figure>
+                </article>
 
-                    <article class="flow-section" style="margin-bottom: 4rem;">
-                        <h3>Unemployment vs Poverty</h3>
-                        <p>
-                        Before looking at the relationship between a specific crime type and the socioeconomic indicators, we can first look at the relationship between two of the socioeconomic indicators themselves: the percentage of the population unemployed and the percentage of households below poverty.
-                        </p>
-                        <p>
-                        The correlation between them has been computed to be 0.800, indicating a strong positive correlation between the two variables. While this strong correlation is expected, as unemployment is a key factor contributing to poverty,
-                        this correlation will be the reason that only one of the two indicators will be used in the subsequent analysis, as they are likely to provide similar insights into the relationship between crime and socioeconomic conditions in Chicago.
-                        </p>
-                        <div class="media" style="margin-top: 1.5rem; text-align: center;">
-                            <figure>
-                                <img src="./figures/unemployment_vs_poverty.png" alt="Scatter Plot of Unemployment vs Poverty" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                                <figcaption>Scatter plot showing the relationship between unemployment rate and poverty rate across Chicago's community areas. </figcaption>
-                            </figure>
-                        </div>
-                    </article>                   
+                <p class="section-subtitle">
+                    <br>
+                    <b>Unemployment vs Poverty</b>
+                    <br>
+                    Before looking at the relationship between a specific crime type and the socioeconomic indicators, we can first look at the relationship between two of the socioeconomic indicators themselves: the percentage of the population unemployed and the percentage of households below poverty.
+                    <br>
+                    The correlation between them has been computed to be 0.800, indicating a strong positive correlation between the two variables. While this strong correlation is expected, as unemployment is a key factor contributing to poverty,
+                    this correlation will be the reason that only one of the two indicators will be used in the subsequent analysis, as they are likely to provide similar insights into the relationship between crime and socioeconomic conditions in Chicago.
+                </p>
+                <article class="card">
+                    <div class="card-content">
+                        <h3>Correlation of Unemployment and Poverty</h3>
+                    </div>
+                    <figure class="media">
+                        <img src="./figures/unemployment_vs_poverty.png" alt="Scatter Plot of Unemployment vs Poverty" loading="lazy">
+                        <figcaption>Scatter plot showing the relationship between unemployment rate and poverty rate across Chicago's community areas. </figcaption>
+                    </figure>
+                </article>
 
-                    <article class="flow-section" style="margin-bottom: 4rem;">
+                <p class="section-subtitle">
+                    <br>
+                    <b>Narcotics Distribution vs Socioeconomic Indicators</b>
+                    <br>
+                    These scatter plots show the relationship between the narcotics crime rate (per 10,000 residents) and two socioeconomic indicators: the percentage of households below poverty, and the percentage of residents aged 16 and older who are unemployed, across different community areas in Chicago.
+                    <br>
+                    The R² between the narcotics rate and the percentage of households below poverty is 0.541, indicating that the poverty rate can explain around 54.1% of the variation in narcotics rates. Looking at the plot, there is a strong positive correlation (R = 0.736) between the two variables, which suggests that areas with a higher percentage of households below poverty tend to have a higher rate of narcotics-related crimes.
+                    <br>
+                    The R² between the narcotics rate and the percentage of unemployed residents is 0.484, indicating that unemployment can explain around 48.4% of the variation in narcotics rates. The plot also shows a positive correlation (R = 0.696) between these two variables, suggesting that areas with higher unemployment rates similarly tend to have higher rates of narcotics-related crimes.
+                    <br>
+                    While there are strong correlations between the narcotics rate and these socioeconomic indicators, it is important to note that these relationships are not necessarily causal, and other factors may be at play in determining crime patterns in Chicago. Specifically, higher recorded narcotics counts in disadvantaged areas could be heavily influenced by systemic factors, such as differences in policing strategies, patrol density, or resource allocation, rather than solely indicating the behavior of the residents themselves.
+                </p>
+                <article class="card">
+                    <div class="card-content">
                         <h3>Narcotics Distribution vs Socioeconomic Indicators</h3>
-                        <p>
-                        These scatter plots show the relationship between the narcotics crime rate (per 10,000 residents) and two socioeconomic indicators: the percentage of households below poverty, and the percentage of residents aged 16 and older who are unemployed, across different community areas in Chicago.
-                        </p>
-                        <p>
-                        The R² between the narcotics rate and the percentage of households below poverty is 0.541, indicating that the poverty rate can explain around 54.1% of the variation in narcotics rates. Looking at the plot, there is a strong positive correlation (R = 0.736) between the two variables, which suggests that areas with a higher percentage of households below poverty tend to have a higher rate of narcotics-related crimes.
-                        </p>
-                        <p>
-                        The R² between the narcotics rate and the percentage of unemployed residents is 0.484, indicating that unemployment can explain around 48.4% of the variation in narcotics rates. The plot also shows a positive correlation (R = 0.696) between these two variables, suggesting that areas with higher unemployment rates similarly tend to have higher rates of narcotics-related crimes.
-                        </p>
-                        <p>
-                        While there are strong correlations between the narcotics rate and these socioeconomic indicators, it is important to note that these relationships are not necessarily causal, and other factors may be at play in determining crime patterns in Chicago. Specifically, higher recorded narcotics counts in disadvantaged areas could be heavily influenced by systemic factors, such as differences in policing strategies, patrol density, or resource allocation, rather than solely indicating the behavior of the residents themselves.
-                        </p>
-                        <div class="media" style="margin-top: 1.5rem; text-align: center;">
-                            <figure>
-                                <img src="./figures/narcotics_vs_socioeconomic.png" alt="Scatter Plot of Narcotics vs Socioeconomic Indicators in Chicago" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                                <figcaption>Scatter plots comparing narcotics crime rates per 10,000 residents against two socioeconomic indicators: poverty rate (R=0.736, R²=0.541) and unemployment rate (R=0.696, R²=0.484). </figcaption>
-                            </figure>
-                        </div>
-                    </article>
-                </div>
+                    </div>
+                    <figure class="media">
+                        <img src="./figures/narcotics_vs_socioeconomic.png" alt="Scatter Plot of Narcotics vs Socioeconomic Indicators in Chicago" loading="lazy">
+                            <figcaption>Scatter plots comparing narcotics crime rates per 10,000 residents against two socioeconomic indicators: poverty rate (R=0.736, R²=0.541) and unemployment rate (R=0.696, R²=0.484). </figcaption>
+                    </figure>
+                </article>
             </section>
 
             <div class="page-nav">
