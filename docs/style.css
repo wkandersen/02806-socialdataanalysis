@@ -282,6 +282,11 @@ h1 {
     gap: 0.8rem;
 }
 
+.facts > a{
+    color: var(--text);
+    text-decoration: none;
+}
+
 .fact {
     border: 1px solid var(--border);
     border-radius: 12px;
