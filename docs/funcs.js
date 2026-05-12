@@ -20,9 +20,8 @@
             { href: 'correlation.html', label: 'Correlation' },
             { href: 'discussion.html', label: 'Discussion' },
             {
-                href: 'https://nbviewer.org/github/wkandersen/02806-socialdataanalysis/blob/main/project3/explainer_notebook.ipynb',
+                href: 'explainer_notebook.html',
                 label: 'Explainer Notebook',
-                external: true,
             },
             { href: 'about.html', label: 'Contributions' },
         ];
