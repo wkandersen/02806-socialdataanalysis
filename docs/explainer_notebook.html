@@ -7800,18 +7800,36 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">folium</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">folium.plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">HeatMap</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">KMeans</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3f798282">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Plots don't show well in the notebook html. View them in the web page or set DISPLAY_PLOTS = True to show them in the notebook</span>
+<span class="n">DISPLAY_PLOTS</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
 </div>
 </div>
@@ -7873,12 +7891,12 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=cc514c4b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cc514c4b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./data/sociodata.csv'</span><span class="p">)</span>
@@ -7886,6 +7904,117 @@ a.anchor-link {
 <span class="c1"># sd.describe()</span>
 <span class="n">sd</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>78 rows, 9 columns
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Community Area Number</th>
+<th>COMMUNITY AREA NAME</th>
+<th>PERCENT OF HOUSING CROWDED</th>
+<th>PERCENT HOUSEHOLDS BELOW POVERTY</th>
+<th>PERCENT AGED 16+ UNEMPLOYED</th>
+<th>PERCENT AGED 25+ WITHOUT HIGH SCHOOL DIPLOMA</th>
+<th>PERCENT AGED UNDER 18 OR OVER 64</th>
+<th>PER CAPITA INCOME</th>
+<th>HARDSHIP INDEX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>29.0</td>
+<td>North Lawndale</td>
+<td>7.4</td>
+<td>43.1</td>
+<td>21.2</td>
+<td>27.6</td>
+<td>42.7</td>
+<td>12034</td>
+<td>87.0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>49.0</td>
+<td>Roseland</td>
+<td>2.5</td>
+<td>19.8</td>
+<td>20.3</td>
+<td>16.9</td>
+<td>41.2</td>
+<td>17949</td>
+<td>52.0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>48.0</td>
+<td>Calumet Heights</td>
+<td>2.1</td>
+<td>11.5</td>
+<td>20.0</td>
+<td>11.0</td>
+<td>44.0</td>
+<td>28887</td>
+<td>38.0</td>
+</tr>
+<tr>
+<th>3</th>
+<td>54.0</td>
+<td>Riverdale</td>
+<td>5.8</td>
+<td>56.5</td>
+<td>34.6</td>
+<td>27.5</td>
+<td>51.5</td>
+<td>8201</td>
+<td>98.0</td>
+</tr>
+<tr>
+<th>4</th>
+<td>67.0</td>
+<td>West Englewood</td>
+<td>4.8</td>
+<td>34.4</td>
+<td>35.9</td>
+<td>26.3</td>
+<td>40.7</td>
+<td>11317</td>
+<td>89.0</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -7920,12 +8049,12 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ce04c20f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ce04c20f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./data/crimedata.csv'</span><span class="p">)</span>
@@ -7934,6 +8063,190 @@ a.anchor-link {
 <span class="c1"># cd.describe()</span>
 <span class="n">cd</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>1878569 rows, 22 columns
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>ID</th>
+<th>Case Number</th>
+<th>Date</th>
+<th>Block</th>
+<th>IUCR</th>
+<th>Primary Type</th>
+<th>Description</th>
+<th>Location Description</th>
+<th>Arrest</th>
+<th>Domestic</th>
+<th>...</th>
+<th>Ward</th>
+<th>Community Area</th>
+<th>FBI Code</th>
+<th>X Coordinate</th>
+<th>Y Coordinate</th>
+<th>Year</th>
+<th>Updated On</th>
+<th>Latitude</th>
+<th>Longitude</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>8508694</td>
+<td>HV185815</td>
+<td>03/06/2012 07:00:00 AM</td>
+<td>021XX W HARRISON ST</td>
+<td>0820</td>
+<td>THEFT</td>
+<td>$500 AND UNDER</td>
+<td>STREET</td>
+<td>False</td>
+<td>False</td>
+<td>...</td>
+<td>25.0</td>
+<td>28.0</td>
+<td>06</td>
+<td>1162250.0</td>
+<td>1897350.0</td>
+<td>2012</td>
+<td>02/10/2018 03:50:01 PM</td>
+<td>41.873991</td>
+<td>-87.679760</td>
+<td>(41.873991018, -87.67976015)</td>
+</tr>
+<tr>
+<th>1</th>
+<td>7925139</td>
+<td>HT156816</td>
+<td>02/10/2011 11:00:00 PM</td>
+<td>012XX S WABASH AVE</td>
+<td>0890</td>
+<td>THEFT</td>
+<td>FROM BUILDING</td>
+<td>BAR OR TAVERN</td>
+<td>False</td>
+<td>False</td>
+<td>...</td>
+<td>2.0</td>
+<td>33.0</td>
+<td>06</td>
+<td>1176964.0</td>
+<td>1894825.0</td>
+<td>2011</td>
+<td>02/10/2018 03:50:01 PM</td>
+<td>41.866742</td>
+<td>-87.625814</td>
+<td>(41.866742115, -87.625814117)</td>
+</tr>
+<tr>
+<th>2</th>
+<td>7849615</td>
+<td>HS662752</td>
+<td>12/15/2010 10:22:00 PM</td>
+<td>019XX W GARFIELD BLVD</td>
+<td>0484</td>
+<td>BATTERY</td>
+<td>PRO EMP HANDS NO/MIN INJURY</td>
+<td>STREET</td>
+<td>True</td>
+<td>False</td>
+<td>...</td>
+<td>16.0</td>
+<td>61.0</td>
+<td>08B</td>
+<td>1164157.0</td>
+<td>1868187.0</td>
+<td>2010</td>
+<td>02/10/2018 03:50:01 PM</td>
+<td>41.793925</td>
+<td>-87.673581</td>
+<td>(41.793924612, -87.673580917)</td>
+</tr>
+<tr>
+<th>3</th>
+<td>8398104</td>
+<td>HT630704</td>
+<td>12/13/2011 05:00:00 PM</td>
+<td>088XX S STONY ISLAND AVE</td>
+<td>4387</td>
+<td>OTHER OFFENSE</td>
+<td>VIOLATE ORDER OF PROTECTION</td>
+<td>STREET</td>
+<td>False</td>
+<td>True</td>
+<td>...</td>
+<td>8.0</td>
+<td>48.0</td>
+<td>26</td>
+<td>1188337.0</td>
+<td>1846773.0</td>
+<td>2011</td>
+<td>02/10/2018 03:50:01 PM</td>
+<td>41.734619</td>
+<td>-87.585598</td>
+<td>(41.734619295, -87.585597809)</td>
+</tr>
+<tr>
+<th>4</th>
+<td>8401681</td>
+<td>HT634382</td>
+<td>12/16/2011 06:00:00 AM</td>
+<td>071XX S WOOD ST</td>
+<td>0820</td>
+<td>THEFT</td>
+<td>$500 AND UNDER</td>
+<td>STREET</td>
+<td>False</td>
+<td>False</td>
+<td>...</td>
+<td>17.0</td>
+<td>67.0</td>
+<td>06</td>
+<td>1165585.0</td>
+<td>1857324.0</td>
+<td>2011</td>
+<td>02/10/2018 03:50:01 PM</td>
+<td>41.764085</td>
+<td>-87.668652</td>
+<td>(41.764084944, -87.668652413)</td>
+</tr>
+</tbody>
+</table>
+<p>5 rows × 22 columns</p>
+</div>
 </div>
 </div>
 </div>
@@ -7970,12 +8283,12 @@ The final dataset is a population data set, this dataset is a csv file with ethn
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4e521d88">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4e521d88">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">population_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./data/populationdata.csv'</span><span class="p">)</span>
@@ -7983,6 +8296,190 @@ The final dataset is a population data set, this dataset is a csv file with ethn
 <span class="c1"># population_data.describe()</span>
 <span class="n">population_data</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>77 rows, 55 columns
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>GEOID</th>
+<th>GEOG</th>
+<th>TOT_POP</th>
+<th>POP_HH</th>
+<th>POP_GQ</th>
+<th>HISP</th>
+<th>WHITE</th>
+<th>BLACK</th>
+<th>ASIAN</th>
+<th>OTHER</th>
+<th>...</th>
+<th>HU_TOT_CHANGE</th>
+<th>WHITE_PCT_CHANGE</th>
+<th>ASIAN_PCT_CHANGE</th>
+<th>HISP_PCT_CHANGE</th>
+<th>BLACK_PCT_CHANGE</th>
+<th>OTHER_PCT_CHANGE</th>
+<th>HH_SIZE_PCT_CHANGE</th>
+<th>TOT_HH_PCT_CHANGE</th>
+<th>TOT_POP_PCT_CHANGE</th>
+<th>HU_TOT_PCT_CHANGE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>45</td>
+<td>Avalon Park</td>
+<td>9458</td>
+<td>9457</td>
+<td>1</td>
+<td>193</td>
+<td>46</td>
+<td>8922</td>
+<td>17</td>
+<td>280</td>
+<td>...</td>
+<td>274</td>
+<td>-0.3</td>
+<td>0.0</td>
+<td>0.5</td>
+<td>-1.4</td>
+<td>1.2</td>
+<td>-11.2</td>
+<td>5.6</td>
+<td>-7.1</td>
+<td>6.4</td>
+</tr>
+<tr>
+<th>1</th>
+<td>3</td>
+<td>Uptown</td>
+<td>57182</td>
+<td>55082</td>
+<td>2100</td>
+<td>7587</td>
+<td>29871</td>
+<td>10800</td>
+<td>6182</td>
+<td>2742</td>
+<td>...</td>
+<td>2478</td>
+<td>0.6</td>
+<td>-0.6</td>
+<td>-0.9</td>
+<td>-1.1</td>
+<td>2.0</td>
+<td>-4.5</td>
+<td>8.4</td>
+<td>1.5</td>
+<td>7.6</td>
+</tr>
+<tr>
+<th>2</th>
+<td>51</td>
+<td>South Deering</td>
+<td>14105</td>
+<td>14053</td>
+<td>52</td>
+<td>4713</td>
+<td>487</td>
+<td>8590</td>
+<td>17</td>
+<td>298</td>
+<td>...</td>
+<td>213</td>
+<td>-1.3</td>
+<td>0.0</td>
+<td>1.6</td>
+<td>-1.0</td>
+<td>0.8</td>
+<td>-8.8</td>
+<td>2.4</td>
+<td>-6.6</td>
+<td>3.7</td>
+</tr>
+<tr>
+<th>3</th>
+<td>52</td>
+<td>East Side</td>
+<td>21724</td>
+<td>21715</td>
+<td>9</td>
+<td>17834</td>
+<td>2627</td>
+<td>910</td>
+<td>63</td>
+<td>290</td>
+<td>...</td>
+<td>38</td>
+<td>-5.1</td>
+<td>0.1</td>
+<td>3.7</td>
+<td>0.8</td>
+<td>0.6</td>
+<td>-6.6</td>
+<td>0.8</td>
+<td>-5.7</td>
+<td>0.5</td>
+</tr>
+<tr>
+<th>4</th>
+<td>49</td>
+<td>Roseland</td>
+<td>38816</td>
+<td>38257</td>
+<td>559</td>
+<td>926</td>
+<td>257</td>
+<td>36626</td>
+<td>47</td>
+<td>960</td>
+<td>...</td>
+<td>-494</td>
+<td>0.3</td>
+<td>0.0</td>
+<td>1.4</td>
+<td>-3.0</td>
+<td>1.4</td>
+<td>-10.4</td>
+<td>-2.7</td>
+<td>-13.0</td>
+<td>-2.8</td>
+</tr>
+</tbody>
+</table>
+<p>5 rows × 55 columns</p>
+</div>
 </div>
 </div>
 </div>
@@ -8110,7 +8607,7 @@ The final dataset is a population data set, this dataset is a csv file with ethn
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_get_shapes_file</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
@@ -8168,6 +8665,9 @@ The final dataset is a population data set, this dataset is a csv file with ethn
     <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">margin</span><span class="o">=</span><span class="p">{</span><span class="s2">"r"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"t"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"l"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="sa">f</span><span class="s2">"./../docs/figures/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">include_plotlyjs</span><span class="o">=</span><span class="s2">"cdn"</span><span class="p">)</span>
 
+    <span class="k">if</span> <span class="n">DISPLAY_PLOTS</span><span class="p">:</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
 <span class="n">geojson</span> <span class="o">=</span> <span class="n">_get_shapes_file</span><span class="p">()</span>
 <span class="n">plot_data</span> <span class="o">=</span> <span class="n">_align_naming_schemes</span><span class="p">(</span><span class="n">sd</span><span class="p">)</span>
 
@@ -8193,12 +8693,12 @@ The final dataset is a population data set, this dataset is a csv file with ethn
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e3c28dce">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e3c28dce">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generate_heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">category</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"All"</span><span class="p">):</span>
@@ -8219,6 +8719,9 @@ The final dataset is a population data set, this dataset is a csv file with ethn
     <span class="n">HeatMap</span><span class="p">(</span><span class="n">heat_data</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
     <span class="n">m</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">"./../docs/figures/crime_map_</span><span class="si">{</span><span class="n">category</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span><span class="w"> </span><span class="s1">'_'</span><span class="p">)</span><span class="si">}</span><span class="s2">.html"</span><span class="p">)</span>
 
+    <span class="k">if</span> <span class="n">DISPLAY_PLOTS</span><span class="p">:</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
 <span class="n">generate_heatmap</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">"ALL"</span><span class="p">)</span>
 <span class="n">generate_heatmap</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">"THEFT"</span><span class="p">)</span>
 <span class="n">generate_heatmap</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">"NARCOTICS"</span><span class="p">)</span>
@@ -8226,6 +8729,24 @@ The final dataset is a population data set, this dataset is a csv file with ethn
 <span class="n">generate_heatmap</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">"GAMBLING"</span><span class="p">)</span>
 <span class="n">generate_heatmap</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">"PROSTITUTION"</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Generating heatmap for category: ALL with 1000 samples.
+Generating heatmap for category: THEFT with 1000 samples.
+Generating heatmap for category: NARCOTICS with 1000 samples.
+Generating heatmap for category: ASSAULT with 1000 samples.
+Generating heatmap for category: GAMBLING with 1000 samples.
+Generating heatmap for category: PROSTITUTION with 1000 samples.
+</pre>
 </div>
 </div>
 </div>
@@ -8249,7 +8770,7 @@ For the Theft Cluster plot we see a very different pattern with several clusters
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_crime_clusters</span><span class="p">(</span><span class="n">cd</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">crime_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">n_clusters</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
@@ -8318,6 +8839,9 @@ For the Theft Cluster plot we see a very different pattern with several clusters
     <span class="c1"># Save to HTML for embedding in website</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 
+    <span class="k">if</span> <span class="n">DISPLAY_PLOTS</span><span class="p">:</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
 <span class="n">plot_crime_clusters</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">crime_type</span><span class="o">=</span><span class="s2">"GAMBLING"</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s2">"./../docs/figures/gambling_clusters.html"</span><span class="p">)</span>
 <span class="n">plot_crime_clusters</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">crime_type</span><span class="o">=</span><span class="s2">"THEFT"</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s2">"./../docs/figures/theft_clusters.html"</span><span class="p">)</span>
 </pre></div>
@@ -8334,7 +8858,6 @@ For the Theft Cluster plot we see a very different pattern with several clusters
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Correlation-plot-for-Hardship-and-crime-types">Correlation plot for Hardship and crime types<a class="anchor-link" href="#Correlation-plot-for-Hardship-and-crime-types">¶</a></h3><p>The correlation plot gives us a quantitative way to compare how different crime types relate to the hardship index across Chicago community areas. Using this we can evaluate whether the patterns observed in the maps are consistent when looking at individual crime categories. The plot are also used to identify differences in how strongly each crime type aligns with socioeconomic conditions.</p>
 <p>From the correlation plot we can see that there is a clear pattern where many violent and public-order crimes tend to be more common in higher-hardship neighborhoods, while several property-related or non-violent offenses show weaker or even slightly negative relationships. For the lower hardship areas crimes such as deceptive practices, theft, and some narcotic-related violations are weakly associated with the areas. In contrast, more serious crimes such as homicide, weapons violations, battery, assault, and narcotics-related offenses tend to be more concentrated in areas with higher hardship index values, suggesting a strong geographical overlap between socioeconomic disadvantage and more severe forms of crime.</p>
-<p>It is important to note that the plot shows correlation, not causation. The relationships displayed reflect patterns of association across neighborhoods rather than direct cause-and-effect links, and may be influenced by a range of underlying structural and contextual factors.</p>
 </div>
 </div>
 </div>
@@ -8343,7 +8866,7 @@ For the Theft Cluster plot we see a very different pattern with several clusters
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">sd</span><span class="p">[</span><span class="s1">'Community Area Number'</span><span class="p">][</span><span class="n">i</span><span class="p">]:</span> <span class="n">sd</span><span class="p">[</span><span class="s1">'COMMUNITY AREA NAME'</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sd</span><span class="p">))}</span>
@@ -8405,8 +8928,8 @@ For the Theft Cluster plot we see a very different pattern with several clusters
 <span class="n">filename</span> <span class="o">=</span> <span class="s2">"crime_hardship_correlation.html"</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="sa">f</span><span class="s2">"./../docs/figures/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">include_plotlyjs</span><span class="o">=</span><span class="s2">"cdn"</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">DISPLAY_PLOTS</span><span class="p">:</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -8440,16 +8963,10 @@ For the Theft Cluster plot we see a very different pattern with several clusters
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
-
-
-<span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">sd</span><span class="p">[</span><span class="s1">'Community Area Number'</span><span class="p">][</span><span class="n">i</span><span class="p">]:</span> <span class="n">sd</span><span class="p">[</span><span class="s1">'COMMUNITY AREA NAME'</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sd</span><span class="p">))}</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">sd</span><span class="p">[</span><span class="s1">'Community Area Number'</span><span class="p">][</span><span class="n">i</span><span class="p">]:</span> <span class="n">sd</span><span class="p">[</span><span class="s1">'COMMUNITY AREA NAME'</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sd</span><span class="p">))}</span>
 <span class="n">cd</span><span class="p">[</span><span class="s1">'Community Area'</span><span class="p">]</span> <span class="o">=</span> <span class="n">cd_copy</span><span class="p">[</span><span class="s1">'Community Area'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
 <span class="n">crime_by_community</span> <span class="o">=</span> <span class="n">cd</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Community Area'</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Crime Count'</span><span class="p">)</span>
 <span class="n">crime_by_community</span> <span class="o">=</span> <span class="n">crime_by_community</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'Crime Count'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -8566,7 +9083,8 @@ For the Theft Cluster plot we see a very different pattern with several clusters
 
 <span class="c1"># Create a combined HTML file</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">"../docs/figures/crime_vs_sociodata_combined.html"</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">DISPLAY_PLOTS</span><span class="p">:</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -8577,7 +9095,7 @@ For the Theft Cluster plot we see a very different pattern with several clusters
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">x_data</span> <span class="o">=</span> <span class="n">sd</span><span class="p">[</span><span class="s1">'PERCENT HOUSEHOLDS BELOW POVERTY'</span><span class="p">]</span>
@@ -8600,7 +9118,10 @@ For the Theft Cluster plot we see a very different pattern with several clusters
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'../docs/figures/unemployment_vs_poverty.png'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">DISPLAY_PLOTS</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -8611,7 +9132,7 @@ For the Theft Cluster plot we see a very different pattern with several clusters
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">narcotics_categories</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"NARCOTICS"</span><span class="p">]</span>
@@ -8671,7 +9192,10 @@ For the Theft Cluster plot we see a very different pattern with several clusters
 
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'../docs/figures/narcotics_vs_socioeconomic.png'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">DISPLAY_PLOTS</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
