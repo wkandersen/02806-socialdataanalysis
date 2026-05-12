@@ -21,9 +21,36 @@
                     This section focuses on the strength and direction of those relationships, rather than a broader interpretation of the crime landscape. 
                     <br>
                     <small><em><strong>Disclaimer:</strong> The dataset used for the population of the different community areas is based on 2010 data while the crime and socioeconomic data has been collected in the period 2008 - 2012.</em></small>
+                    In the previous sections, we examined Chicago’s socioeconomic conditions and crime patterns. 
+                    Having established where hardship is concentrated and how crime is distributed across the city, we now want to explore the statistical relationships between these two dimensions.
+                    <br>
+                    The visualizations in this section quantify how strongly different socioeconomic indicators such as the hardship index, poverty, and unemployment are associated with overall crime rates and specific crime categories across Chicago’s community areas.
+                    This section also focuses on correlation analysis, which helps us understand the strength and direction of relationships between variables.
                 </p>
 
+
                 <p class="section-subtitle">
+                    <b>Correlation between Hardship Index and Crime Types</b>
+                    <br>
+                    The crime correlation plot shows how different types of crime are associated with the hardship index across Chicago community areas. Overall, there is a clear pattern where many violent and public-order crimes tend to be more common in higher-hardship neighborhoods, while several property-related or non-violent offenses show weaker or even slightly negative relationships.
+                    On the negative side, crimes such as deceptive practices, theft, and some narcotic-related violations are more weakly associated with lower hardship areas, although these relationships are not very strong. Most other crimes cluster around small to moderate correlations, indicating more mixed or location-dependent patterns.
+                    In contrast, many of the strongest positive relationships are seen in more serious crimes such as homicide, weapons violations, battery, assault, and narcotics-related offenses. These tend to be more concentrated in areas with higher hardship index values, suggesting a strong geographical overlap between socioeconomic disadvantage and more severe forms of crime.
+                    <br><br>It is important to note that these results show correlation, not causation. While crime and hardship clearly co-occur in many of the same neighborhoods, this does not mean that one directly causes the other. Instead, both may be influenced by shared underlying factors such as economic opportunity, population density, policing practices, historical segregation, and neighborhood infrastructure. Additionally, differences in reporting rates and enforcement intensity across neighborhoods may also affect the observed relationships.
+                </p>
+
+                <article class="card">
+                    <div class="card-content">
+                        <h3>Correlation between Hardship and Crime types</h3>
+                    </div>
+                    <figure class="media">
+                        <iframe src="./figures/crime_hardship_correlation.html" title="Scatter Plots of Hardship Index vs. Other Socioeconomic Indicators in Chicago" loading="lazy" style="height: 820px;"></iframe>
+                        <figcaption>This plot shows the correlation between different crime types and the hardship index across Chicago community areas with most crime types having a positive correlation. Positive values indicate crimes more common in higher-hardship neighborhoods, negative values indicate lower-hardship areas, and values near zero suggest little or no relationship.
+                        </figcaption>
+                    </figure>
+                </article>
+
+                <p class="section-subtitle">
+                    <br>
                     <b>Hardship Index vs Crime Rate per 10k Residents</b>
                     <br>
                     This interactive visualization shows the relationship between the socioeconomic indicators and the crime rate per 10,000 residents across different community areas in Chicago. 
